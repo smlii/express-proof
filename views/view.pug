@@ -1,0 +1,38 @@
+doctype html
+html
+   head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      meta(http-equiv='X-UA-Compatible' content='ie=edge')
+      title= title 
+      link(rel="stylesheet", type="text/css", href="style.css")
+   body
+   //- div.list
+   //-    h4 commitments list
+   //-    p=list
+   div.maindiv
+      p
+         h1 Create and Verify proof!
+      
+      form(action="/generateCommitment" method='GET')
+         button generate commitment
+         br
+        
+         br
+      form(action="/gen_proof" method='POST')
+         input(
+            type= 'text'
+            name= 'search'
+            placeholder="commitment"
+         )
+         br
+         button(type="submit") create Prove 
+         br
+      form(action="/verify" method="POST")
+         input(type="text" placeholder="proof" name="proofinput")
+         br
+         input(type="text" placeholder="public signals" name="publicinput")
+         br
+         button.btn.btn-primary(type='submit') verify 
+
+      textarea(name="loginfo", cols="60", rows="15")=area
